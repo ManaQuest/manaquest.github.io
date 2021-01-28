@@ -1,0 +1,19 @@
+body{
+	box-sizing:border-box;
+}
+input{
+	display:block;
+	margin:3px 0;
+}
+.loading{
+	width:23%;
+	margin:0 auto;
+}
+.logotip{
+	display:none;
+}
+.logotip p{
+	width:40%;
+	margin:0 auto;
+	font-size:55px;
+}
