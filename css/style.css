@@ -1,13 +1,27 @@
 body{
 	box-sizing:border-box;
+	margin:0 0;
 }
 input{
 	display:block;
-	margin:3px 0;
+	margin:3px auto;
+	width:80%;
+}
+input:first-child{
+	display:block;
+	margin:0 auto;
+	width:80%;
+}
+input:last-child{
+	display:block;
+	margin:3px auto;
+	width:40%;
 }
 .loading{
 	width:23%;
 	margin:0 auto;
+	padding:3px 0 3px 0;
+	background-color:red;
 }
 .logotip{
 	display:none;
@@ -16,4 +30,30 @@ input{
 	width:40%;
 	margin:0 auto;
 	font-size:55px;
+}
+.pol{
+	background-color:red;	
+	width:45%;
+	height:100px;
+}
+.pol:first-child{
+	float:left;
+}
+.pol:last-child{
+	float:right;
+}
+.header{
+	min-height:100px;
+	margin:10px 0 0 0;
+}
+.header:nth-child(1){
+	min-height:80px;
+	padding:10px 0 0 0;
+	margin:0 0 0 0;
+}
+.header:nth-child(2){
+	min-height:100px;
+}
+.header:nth-child(3){
+	min-height:100px;
 }
