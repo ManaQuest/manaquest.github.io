@@ -23,13 +23,15 @@ input:last-child{
 	padding:3px 0 3px 0;
 	background-color:red;
 }
-.logotip{
-	display:none;
-}
-.logotip p{
+.logotip .header p{
 	width:40%;
 	margin:0 auto;
 	font-size:55px;
+}
+.logotip .header p:last-child{
+	width:40%;
+	margin:0 auto;
+	font-size:30px;
 }
 .pol{
 	background-color:red;	

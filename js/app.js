@@ -1,11 +1,16 @@
 function cl(){
 let div=document.querySelector('.logotip');
+let h1=document.querySelector('.logotip .header h1');
 let arr=['katya',1234,'kosty',4321];
 let f=document.forms[0];
-console.log(arr[1]);
+localStorage.setItem('login',f.test.value);
+document.location.href="index2.html";
 if(f.elements.test.value==arr[0]&&f.elements.test1.value==arr[1]||f.elements.test.value==arr[2]&&f.elements.test1.value==arr[3])
 {
-	f.outerHTML="";
-	div.style.display='block';
+	localStorage.setItem('login',f.test.value);
+	localStorage.setItem('parol',f.test1.value);
+	document.location.href="index2.html";
 }
 }
+var p=document.querySelectorAll('.logotip .header p');
+p[1].innerHTML='Добро пожаловать '+localStorage.getItem('login');
