@@ -11,4 +11,6 @@ if(f.elements.test.value==arr[0]&&f.elements.test1.value==arr[1]||f.elements.tes
 }
 }
 var p=document.querySelectorAll('.logotip .header p');
+if(p[1])
 p[1].innerHTML='Добро пожаловать '+localStorage.getItem('login');
+window.addEventListener('unload',function(){localStorage.setItem('log',false)});
