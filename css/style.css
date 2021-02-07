@@ -23,39 +23,3 @@ input:last-child{
 	padding:3px 0 3px 0;
 	background-color:red;
 }
-.logotip .header p{
-	width:40%;
-	margin:0 auto;
-	font-size:55px;
-}
-.logotip .header p:last-child{
-	width:40%;
-	margin:0 auto;
-	font-size:30px;
-}
-.pol{
-	background-color:red;	
-	width:45%;
-	height:100px;
-}
-.pol:first-child{
-	float:left;
-}
-.pol:last-child{
-	float:right;
-}
-.header{
-	min-height:100px;
-	margin:10px 0 0 0;
-}
-.header:nth-child(1){
-	min-height:80px;
-	padding:10px 0 0 0;
-	margin:0 0 0 0;
-}
-.header:nth-child(2){
-	min-height:100px;
-}
-.header:nth-child(3){
-	min-height:100px;
-}

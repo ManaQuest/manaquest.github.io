@@ -4,24 +4,41 @@
 		<meta charset="UTF-8">
 		<title>Fantasy story</title>
 		<link href="images/1.png" rel="shortcut icon" type="image/png">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style2.css" rel="stylesheet">
 	</head>
-	<body>
+	<body onload="if(localStorage.getItem('log')=='false') document.location.href='index.html';" onunload="localStorage.setItem('log','false');">
 		<div class="logotip">
 			<div class="header">
 				<p>Fantasy story</p>
 				<p></p>
 			</div>
 			<div class="header">
-				<div class="pol">
+				<div class="chet">
 				</div>
-				<div class="pol">
+				<div class="chet">
+				</div>
+				<div class="chet">
+				</div>
+				<div class="chet">
 				</div>
 			</div>
 			<div class="header">
-			
+				<table style="border:1px solid; margin: 0 auto;">
+					<tr>
+						<td>Ничего</td>
+					</tr>
+					<tr>
+						<td>Химия</td>
+					</tr>
+					<tr>
+						<td>Всемирная история</td>
+					</tr>
+					<tr>
+						<td>Русский язык</td>
+					</tr>
+				</table>
 			</div>
 		</div>
-		<script src="js/app.js"></script>
+		<script src="js/app2.js"></script>
 	</body>
 </html>

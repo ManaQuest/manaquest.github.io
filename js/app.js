@@ -1,14 +1,16 @@
 function cl(){
 let div=document.querySelector('.logotip');
 let h1=document.querySelector('.logotip .header h1');
-let arr=['katya',1234,'kosty',4321];
+let arr=['kosty',4321,'yasha',1234,'ksyusha',3421,'katya',1423];
 let f=document.forms[0];
-if(f.elements.test.value==arr[0]&&f.elements.test1.value==arr[1]||f.elements.test.value==arr[2]&&f.elements.test1.value==arr[3])
+for (let i=0;i<arr.length;i+=2)
 {
-	localStorage.setItem('login',f.test.value);
-	localStorage.setItem('parol',f.test1.value);
+if(f.elements.login.value==arr[i]&&f.elements.password.value==arr[i+1])
+{
+	localStorage.setItem('login',f.login.value);
+	localStorage.setItem('parol',f.password.value);
+	localStorage.setItem('log','true');
 	document.location.href="index2.html";
 }
 }
-var p=document.querySelectorAll('.logotip .header p');
-p[1].innerHTML='Добро пожаловать '+localStorage.getItem('login');
+}
