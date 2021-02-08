@@ -53,7 +53,7 @@ for(let i=0;i<a.getHours();i++)
 	{
 			tr[i].style.backgroundColor='green';
 	}
-	else if(time[0][i]>a.getHours()&&tr[i])
+	else if(time[0][i]>a.getHours()&&tr[i]&&tr[i].style.backgroundColor!='yellow')
 	{
 		
 			tr[i].style.backgroundColor='yellow';
