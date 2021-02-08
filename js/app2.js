@@ -1,6 +1,6 @@
 var p=document.querySelectorAll('.logotip .header p');
 var tr=document.querySelectorAll('.logotip .header table tr');
-var time=[[9,11,13,15],[40,35,55,50]];
+var time=[[8,9,11,13,15],[0,40,35,55,50]];
 var day=[['ничего','юхимия','физ. к. и зд.','щвсемирная история','русский язык'],['физика','биология','математика','щрусский язык','информатика'],[],[],[],[]];
 var b=new Date(2021,0,1);
 var a=new Date;
