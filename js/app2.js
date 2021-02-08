@@ -16,12 +16,16 @@ for(let i=0;i<a.getHours();i++)
 			tr[i].style.backgroundColor='green';
 		}
 	}
-	else if(time[0][i]<a.getHours()&&a.getHours()-time[0][i]==1&&tr[i])
+	else if(time[0][i]<a.getHours()&&a.getHours()-time[0][i]==1&&tr[i]&&time[0][i]-time[0][i+1]==1)
 	{
-		if(time[1][i]<a.getMinutes())
+		if(time[1][i+1]<a.getMinutes())
 		{
 			tr[i].style.backgroundColor='green';
 		}
+	}
+        else if(time[0][i]<a.getHours()&&a.getHours()-time[0][i]==1&&tr[i]&&time[0][i]-time[0][i+1]<1)
+	{
+			tr[i].style.backgroundColor='green';
 	}
 	else if(time[0][i]<a.getHours()&&a.getHours()-time[0][i]>1&&tr[i])
 	{
