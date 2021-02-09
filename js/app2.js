@@ -42,20 +42,20 @@ for(let i=1;i<a.getHours();i++)
 	{
 		if(time[1][i]<a.getMinutes())
 		{
-			tr[i].style.backgroundColor='green';
+			tr[i-1].style.backgroundColor='green';
 		}
 		else if(time[1][i]>a.getMinutes())
 		{
-			tr[i].style.backgroundColor='yellow';
+			tr[i-1].style.backgroundColor='yellow';
 		}
 	}
 	else if(time[0][i]<a.getHours()&&tr[i])
 	{
-			tr[i].style.backgroundColor='green';
+			tr[i-1].style.backgroundColor='green';
 	}
 	else if(time[0][i]>a.getHours()&&time[0][i-1]<a.getHours()&&tr[i])
 	{
 		
-			tr[i].style.backgroundColor='yellow';
+			tr[i-1].style.backgroundColor='yellow';
 	}
 }
