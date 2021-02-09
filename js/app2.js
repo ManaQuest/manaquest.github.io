@@ -34,7 +34,7 @@ if(localStorage.getItem('log')=='true')
 			tr[i].innerHTML='<td>'+day[v-1][n]+'</td>';
 		}
 	}
-	if(tr[tr.length-1].innerHTML.length==0&&tr[tr.length-1])
+	if(tr[tr.length-1]&&tr[tr.length-1].innerHTML.length==0)
 		tr[tr.length-1].outerHTML='';
 for(let i=1;i<a.getHours();i++)
 {
