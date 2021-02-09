@@ -38,7 +38,7 @@ if(localStorage.getItem('log')=='true')
 		tr[tr.length-1].outerHTML='';
 for(let i=1;i<a.getHours();i++)
 {
-	if(time[0][i]==a.getHours()&&tr[i])
+	if(time[0][i]==a.getHours()&&tr[i-1])
 	{
 		if(time[1][i]<a.getMinutes())
 		{
@@ -49,11 +49,11 @@ for(let i=1;i<a.getHours();i++)
 			tr[i-1].style.backgroundColor='yellow';
 		}
 	}
-	else if(time[0][i]<a.getHours()&&tr[i])
+	else if(time[0][i]<a.getHours()&&tr[i-1])
 	{
 			tr[i-1].style.backgroundColor='green';
 	}
-	else if(time[0][i]>a.getHours()&&time[0][i-1]<a.getHours()&&tr[i])
+	else if(time[0][i]>a.getHours()&&time[0][i-1]<a.getHours()&&tr[i-1])
 	{
 		
 			tr[i-1].style.backgroundColor='yellow';
