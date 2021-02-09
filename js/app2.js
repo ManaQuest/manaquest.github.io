@@ -53,9 +53,16 @@ for(let i=1;i<a.getHours();i++)
 	{
 			tr[i-1].style.backgroundColor='green';
 	}
-	else if(time[0][i]>a.getHours()&&time[0][i-1]<a.getHours()&&tr[i-1])
+	else if(time[0][i]>a.getHours()&&tr[i-1])
 	{
-		
+		if(time[0][i-1]<a.getHours())
+                {
 			tr[i-1].style.backgroundColor='yellow';
+                }
+                else if(time[0][i-1]==a.getHours())
+                {
+                        if(time[1][i-1]<a.getMinutes())
+			tr[i-1].style.backgroundColor='yellow';
+                }
 	}
 }
