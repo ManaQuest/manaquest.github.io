@@ -18,12 +18,12 @@ if(localStorage.getItem('log')=='true')
 		}
 		else if(day[v-1][n].search('щ')!=-1)
 		{
-			if(parseInt(a.getDate()-b.getDate()/7)%2==0)
+			if(parseInt((a.getDate()-b.getDate())/7)%2==0)
 			{
 				tr[i].innerHTML='<td>'+day[v-1][n].replace('щ','')+'</td>';
 				n++;
 			}
-			else if(parseInt(a.getDate()-b.getDate()/7)%2==1)
+			else if(parseInt((a.getDate()-b.getDate())/7)%2==1)
 			{
 				tr[i].innerHTML='<td>'+day[v-1][n+1]+'</td>';
 				n++;
