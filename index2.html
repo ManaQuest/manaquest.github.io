@@ -6,7 +6,7 @@
 		<link href="images/1.png" rel="shortcut icon" type="image/png">
 		<link href="css/style2.css" rel="stylesheet">
 	</head>
-	<body onload="if(localStorage.getItem('log')=='false') document.location.href='index.html';" onunload="localStorage.setItem('log','false');">
+	<body onload="//if(localStorage.getItem('log')=='false') document.location.href='index.html';" onunload="localStorage.setItem('log','false');">
 		<div class="logotip">
 			<div class="header">
 				<p>Fantasy story</p>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="header">
-				<table style="border:1px solid; margin: 0 auto;">
+				<table style="border:1px solid; margin: 0 auto; font-size:70px;">
 					<tr>
 						<td>Ничего</td>
 					</tr>
@@ -35,8 +35,11 @@
 					</tr>
 					<tr></tr>
 				</table>
-				
 			</div>
+			<div class="pol">
+					<button class="butt" onclick="d--;init(d);">прош</button>
+					<button class="butt" onclick="d++;init(d);">след</button>
+				</div>
 		</div>
 		<script src="js/app2.js"></script>
 	</body>
