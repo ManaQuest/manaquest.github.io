@@ -1,7 +1,7 @@
 body{
 	box-sizing:border-box;
 	margin:0 0;
-	//display:none;
+	display:none;
 }
 .logotip .header p{
 	width:40%;
