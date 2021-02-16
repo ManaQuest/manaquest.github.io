@@ -19,7 +19,7 @@ function init(v){
 			d=1;
 			v=1;
 		}
-	if(d==a.getDay()&&d==0)
+	if(d==0)
 	{
 		v++;
 		d++;
