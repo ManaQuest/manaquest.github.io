@@ -38,7 +38,7 @@ function init(v){
 			tr.push(tr1[i].querySelectorAll('td table tr')[1]);
 			n++;
 		}
-		else if(day[v-1][n].search('щ')!=-1)
+		else if(day[v-1][n].search('щ')==0)
 		{
 			if(parseInt((a.getDate()-b.getDate())/7)%2==0)
 			{
