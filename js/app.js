@@ -1,7 +1,7 @@
 function cl(){
 let div=document.querySelector('.logotip');
 let h1=document.querySelector('.logotip .header h1');
-let arr=['kosty',4321,'yasha',1234,'ksyusha',3421,'katya',1423,'lisa',2345];
+let arr=['kosty',4321,'yasha',1234,'ksyusha',3421,'katya',1423,'denis',1234];
 let f=document.forms[0];
 for (let i=0;i<arr.length;i+=2)
 {
