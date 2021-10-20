@@ -42,7 +42,7 @@ function init(nday){
 		nowday=5;
 		nday=5;
 	}
-	p[1].innerHTML=dayned[nday]+' '+nday;
+	p[1].innerHTML=dayned[nday];
 	for(let i=0;i<tr.length;i++)
 	{
 		tr[i].innerHTML='';
