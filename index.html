@@ -2,18 +2,37 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Fantasy story</title>
+		<title>Fantasy storyz</title>
 		<link href="images/1.png" rel="shortcut icon" type="image/png">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style2.css" rel="stylesheet">
 	</head>
-	<body>
-		<form method="post" action="javascript:cl()">
-			<div class="loading">
-				<input type="text" name="login" placeholder="Введите логин">
-				<input type="password"name="password" placeholder="Введите пароль">
-				<input type="submit" value="Войти">
+	<body <!--onload="if(localStorage.getItem('log')=='false') document.location.href='/';" onunload="localStorage.setItem('log','false');"-->
+		<div class="logotip">
+			<div class="header">
+				<p></p>
+				<p></p>
 			</div>
-		</form>
-		<script src="js/app.js"></script>
+			<div class="header">
+				<table style="border:10px solid yellow; margin: 0 auto; font-size:70px;">
+					<tr style="padding:10%;">
+						<td><div></div></td>
+					</tr>
+					<tr>
+						<td><div></div></td>
+					</tr>
+					<tr>
+						<td><div></div></td>
+					</tr>
+					<tr>
+						<td><div></div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="pol">
+					<button class="butt" onclick="nowday--;init(nowday);">прош</button>
+					<button class="butt" onclick="nowday++;init(nowday);">след</button>
+				</div>
+		</div>
+		<script src="js/app2.js"></script>
 	</body>
 </html>

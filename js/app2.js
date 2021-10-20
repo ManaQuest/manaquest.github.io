@@ -1,103 +1,93 @@
 var p=document.querySelectorAll('.logotip .header p');
-var tr1=document.querySelectorAll('.logotip .header table tr');
-var tr=[];
-var time=[[8,9,11,13,15],[0,40,35,55,50]];
-var day=[['ничего','юхимия','физ. к. и зд.','щвсемирная история','русский язык'],['физика','биология','математика','щрусский язык','информатика'],['астрономия','юфизика','физ. к. и зд.','математика','иностранный язык'],['белорусский язык','белорусская литература','информатика','щобществоведение','химия'],['юничего','география','юиностранный язык','физ. к. и зд.','всемирная история','русская литература'],['ничего','обществоведение','математика','допризывная подготовка']];
-var b=new Date(2021,1,1);
+var tr=document.querySelectorAll('.logotip .header table tr td div');
+var time=[[8,9,20],[0,30,57]];
+var day=[['математика','ТЭЦ','/ned/техническая электроника','программирование','программирование'],['информационные технологии','/del/ТУСТ','физ к и зд','иностранный язык','общая физика'],['Ничего','Информационные технологии','иностранный язык','/ned/ЗНиТотЧС','Техническая электроника'],['/ned/Ничего','Математика','/del/ТКиОК','физ к и зд','ТЭЦ','Программирование'],['Ничего','/ned/Общая физика','ТЭЦ','ТУСТ','Математика'],['Ничего','/del/Ничего','физ к и зд','ТКиОК','Охрана среды']];
 var a=new Date;
-var d=a.getDay();
+var nowday=a.getDay();
 if(localStorage.getItem('log')=='true')
 {
 	p[1].innerHTML='Добро пожаловать '+localStorage.getItem('login');
 	document.body.style.display='block';
 }
 init(a.getDay());
-function init(v){
-	tr=[];
-		if(d>6)
-		{
-			d=1;
-			v=1;
-		}
-	if(d==0)
+function init(nday){
+	let count=0;
+	if(nowday>5)
 	{
-		v++;
-		d++;
+		nowday=0;
+		nday=0;
 	}
-	for(let i=0;i<tr1.length;i++)
+	else if(nowday<0)
 	{
-		tr1[i].innerHTML='';
-		tr1[i].style.backgroundColor=null;
+		nowday=5;
+		nday=5;
 	}
-	for(let i=0,n=0;i<6&&tr1[i]&&day[v-1][n];i++,n++)
+	for(let i=0;i<tr.length;i++)
 	{
-		if(day[v-1][n].search('ю')!=-1)
+		tr[i].innerHTML='';
+	}
+	for(let i=0;i<day[nday].length;i++)
+	{
+		if(day[nday][i].search('/ned/')!=-1)
 		{
-			tr1[i].innerHTML='<td><table><tr><td>'+day[v-1][n].replace('ю','')+'</td></tr><tr><td>'+day[v-1][n+1]+'</td></tr></table></td>';
-			tr.push(tr1[i].querySelectorAll('td table tr')[0]);
-			tr.push(tr1[i].querySelectorAll('td table tr')[1]);
-			n++;
-		}
-		else if(day[v-1][n].search('щ')==0)
-		{
-			if(parseInt((a.getDate()-b.getDate())/7)%2==0)
+			if(week(a,new Date(2021,8,13))==1)
 			{
-				tr.push(tr1[i]);
-				tr1[i].innerHTML='<td>'+day[v-1][n].replace('щ','')+'</td>';
-				n++;
+				tr[i-count].innerHTML=day[nday][i].replace('/ned/','');
 			}
-			else if(parseInt((a.getDate()-b.getDate())/7)%2==1)
+			else
 			{
-				tr.push(tr1[i]);
-				tr1[i].innerHTML='<td>'+day[v-1][n+1]+'</td>';
-				n++;
+				tr[i-count].innerHTML=day[nday][i+1];
 			}
+			tr[i-count].style.backgroundColor='';
+			i++;
+			count++;
 		}
-		else if(day[v-1][n].search('ю')==-1)
+		else if(day[nday][i].search('/del/')!=-1)
 		{
-			tr1[i].innerHTML='<td>'+day[v-1][n]+'</td>';
-			tr.push(tr1[i]);
+			tr[i-count].innerHTML='<td><table style="border:black solid 1px;"><tr><td>'+day[nday][i].replace('/del/','')+'</td></tr>'+'<tr><td>'+day[nday][i+1]+'</td></tr>'+'</table></td>';
+			tr[i-count].style.backgroundColor='';
+			i++;
+			count++;
 		}
-		else if(tr1[i].innerHTML.length==0)
+		else 
 		{
-			console.log(tr[i].innerHTML.length);
-			tr.push(tr1[i]);
+			tr[i-count].innerHTML=day[nday][i];
+			tr[i-count].style.backgroundColor='';
 		}
 	}
-	if(d==a.getDay())
+	if(nday==a.getDay())
+		s_time();
+}
+function s_time(){
+	for(let i=0;i<a.getHours();i++)
 	{
-		r();
+		if(tr[i]&&time[0][i]<a.getHours())
+		{
+			tr[i].style.backgroundColor='green';
+		}
+		else if(tr[i]&&time[0][i]==a.getHours()&&time[1][i]<a.getMinutes())
+		{
+			tr[i].style.backgroundColor='green';
+		}
+		else if(tr[i]&&time[0][i]==a.getHours()&&time[1][i]>=a.getMinutes())
+		{
+			tr[i].style.backgroundColor='yellow';
+		}
+		else if(tr[i]&&time[0][i]>a.getHours()&&tr[i-1].style.backgroundColor=='green')
+		{
+			tr[i].style.backgroundColor='yellow';
+		}
 	}
 }
-function r(){
-	for(let i=1;i<a.getHours();i++)
-		{
-		if(time[0][i]==a.getHours()&&tr[i-1])
-		{
-			if(time[1][i]<a.getMinutes())
-			{
-				tr[i-1].style.backgroundColor='green';
-			}
-			else if(time[1][i]>=a.getMinutes())
-			{
-				tr[i-1].style.backgroundColor='yellow';
-			}
-		}
-		else if(time[0][i]<a.getHours()&&tr[i-1])
-		{
-				tr[i-1].style.backgroundColor='green';
-		}
-		else if(time[0][i]>a.getHours()&&tr[i-1])
-		{
-			if(time[0][i-1]<a.getHours())
-					{
-				tr[i-1].style.backgroundColor='yellow';
-					}
-					else if(time[0][i-1]==a.getHours())
-					{
-							if(time[1][i-1]<a.getMinutes())
-				tr[i-1].style.backgroundColor='yellow';
-					}
-		}
+function week(x,y){
+	let d=Math.round((x-y)/(1000*60*60*24));
+	let count=0;
+	while(count*7<d)
+	{
+		count++;
 	}
+	if(count%2==0)
+		return 2;
+	if(count%2==1)
+		return 1;
 }
