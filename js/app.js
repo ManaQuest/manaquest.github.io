@@ -76,7 +76,7 @@ function init(nday){
 			tr[i-count].style.backgroundColor='';
 		}
 	}
-	//if(nday==a.getDay()-1)
+	if(nday==a.getDay()-1)
 		s_time(nday);
 }
 function s_time(nday){
